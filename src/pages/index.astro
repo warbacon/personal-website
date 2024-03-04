@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import GitHubRepo from "../components/GitHubRepo.svelte";
+import GitHubRepo from "../components/GitHubRepo.astro";
 ---
 
 <Layout title="Warbacon - Portfolio">
@@ -40,12 +40,10 @@ import GitHubRepo from "../components/GitHubRepo.svelte";
                 <GitHubRepo
                     repo="zunder-zsh"
                     imageUrl="https://repository-images.githubusercontent.com/441279901/c92ca975-c53b-420f-866b-e548f5f29ffe"
-                    client:visible
                 />
                 <GitHubRepo
                     repo="baconclock"
                     imageUrl="https://repository-images.githubusercontent.com/601216652/587e54ae-baad-4e07-9041-099b2ce6b899"
-                    client:visible
                 />
             </div>
         </section>

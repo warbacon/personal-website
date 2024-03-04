@@ -15,25 +15,14 @@
         "tabWidth": 4,
         "plugins": [
             "prettier-plugin-astro",
-            "prettier-plugin-svelte",
             "prettier-plugin-tailwindcss"
-        ],
-        "overrides": [
-            {
-                "files": "*.svelte",
-                "options": {
-                    "parser": "svelte"
-                }
-            }
         ]
     },
     "dependencies": {
         "@astrojs/check": "^0.5.6",
-        "@astrojs/svelte": "^5.2.0",
         "@astrojs/tailwind": "^5.1.0",
         "@fontsource-variable/dm-sans": "^5.0.4",
         "astro": "^4.4.9",
-        "svelte": "^4.2.12",
         "tailwindcss": "^3.4.1",
         "typescript": "^5.3.3"
     },
@@ -41,7 +30,6 @@
         "@catppuccin/tailwindcss": "^0.1.6",
         "prettier": "^3.2.5",
         "prettier-plugin-astro": "^0.13.0",
-        "prettier-plugin-svelte": "^3.2.2",
         "prettier-plugin-tailwindcss": "^0.5.11"
     }
 }
