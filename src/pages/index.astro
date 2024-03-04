@@ -4,70 +4,60 @@ import GitHubRepo from "../components/GitHubRepo.svelte";
 ---
 
 <Layout title="Warbacon - Portfolio">
-	<main class="px-6 max-w-[80ch] m-auto space-y-16">
-		<section
-			class="flex flex-col items-start gap-2 md:items-center justify-center my-20"
-		>
-			<h2 class="text-3xl text-ctp-peach font-bold">
-				Computer Science Student
-			</h2>
-			<h1 class="text-7xl font-bold">Joaquín Guerra</h1>
-			<p class="text-ctp-subtext0 mt-2">
-				Linux enthusiast and Web Designer.
-			</p>
-		</section>
-		<section class="space-y-4">
-			<h1 class="text-3xl font-bold scroll-mt-24 text-balance">
-				About Me
-			</h1>
-			<p>
-				Hi! My name is Joaquín Guerra Tocino, I'm from Spain and I study
-				Computer Science in the University of Cádiz.
-			</p>
-			<p>
-				I love tinkering with my system and making it my own, developing
-				efficient ways to get my work done...that's why I love Linux,
-				although I also work to be comfortable using Windows since I
-				still rely on it to some extent.
-			</p>
-			<p>
-				I have extensive knowledge of web technologies, always try to
-				keep up to date with the most revolutionary and, above all, I'm
-				not afraid to learn something new on a daily basis!
-			</p>
-		</section>
-		<section class="space-y-4">
-			<h1 class="text-3xl font-bold scroll-mt-24">Skills</h1>
-			<p>
-				Fairly familiar with C, C++ and Python. Svelte and Astro
-				evangelist. I can write overly complex shell scripts in POSIX,
-				bash and fish.
-			</p>
-		</section>
-		<section class="space-y-4">
-			<h1 class="text-3xl font-bold scroll-mt-24">Projects</h1>
-			<div class="flex flex-col md:grid md:grid-cols-2 gap-4">
-				<GitHubRepo
-					repo="zunder-zsh"
-					imageUrl="https://repository-images.githubusercontent.com/441279901/c92ca975-c53b-420f-866b-e548f5f29ffe"
-					client:visible
-				/>
-				<GitHubRepo
-					repo="baconclock"
-					imageUrl="https://repository-images.githubusercontent.com/601216652/587e54ae-baad-4e07-9041-099b2ce6b899"
-					client:visible
-				/>
-			</div>
-		</section>
-	</main>
-	<footer class="gap-3 max-w-[80ch] mx-auto mt-10">
-		<div class="w-full px-6 h-[1px] bg-ctp-surface2" />
-		<div class="flex justify-between items-center my-4 px-6 text-ctp-subtext0">
-			<p class="italic">I use Arch btw</p>
-			<button
-				class="hover:bg-ctp-surface0 focus:ring-4 ring-ctp-peach rounded-md transition-colors p-3 hover:text-ctp-text focus:outline-none hover:underline"
-				><a href="https://github.com/warbacon/portfolio">Source code</a></button
-			>
-		</div>
-	</footer>
+    <main class="m-auto max-w-[80ch] space-y-16 px-6">
+        <section class="my-20 flex flex-col items-start justify-center gap-2 md:items-center">
+            <h2 class="text-3xl font-bold text-ctp-peach">Computer Science Student</h2>
+            <h1 class="text-7xl font-bold">Joaquín Guerra</h1>
+            <p class="mt-2 text-ctp-subtext0">Linux enthusiast and Web Designer.</p>
+        </section>
+        <section class="space-y-4">
+            <h1 class="scroll-mt-24 text-balance text-3xl font-bold">About Me</h1>
+            <p>
+                Hi! My name is Joaquín Guerra Tocino, I'm from Spain and I study Computer Science in
+                the University of Cádiz.
+            </p>
+            <p>
+                I love tinkering with my system and making it my own, developing efficient ways to
+                get my work done...that's why I love Linux, although I also work to be comfortable
+                using Windows since I still rely on it to some extent.
+            </p>
+            <p>
+                I have extensive knowledge of web technologies, always try to keep up to date with
+                the most revolutionary and, above all, I'm not afraid to learn something new on a
+                daily basis!
+            </p>
+        </section>
+        <section class="space-y-4">
+            <h1 class="scroll-mt-24 text-3xl font-bold">Skills</h1>
+            <p>
+                Fairly familiar with C, C++ and Python. Svelte and Astro evangelist. I can write
+                overly complex shell scripts in POSIX, bash and fish.
+            </p>
+        </section>
+        <section class="space-y-4">
+            <h1 class="scroll-mt-24 text-3xl font-bold">Projects</h1>
+            <div class="flex flex-col gap-4 md:grid md:grid-cols-2">
+                <GitHubRepo
+                    repo="zunder-zsh"
+                    imageUrl="https://repository-images.githubusercontent.com/441279901/c92ca975-c53b-420f-866b-e548f5f29ffe"
+                    client:visible
+                />
+                <GitHubRepo
+                    repo="baconclock"
+                    imageUrl="https://repository-images.githubusercontent.com/601216652/587e54ae-baad-4e07-9041-099b2ce6b899"
+                    client:visible
+                />
+            </div>
+        </section>
+    </main>
+    <footer class="mx-auto mt-10 max-w-[80ch] gap-3">
+        <div class="h-[1px] w-full bg-ctp-surface2 px-6"></div>
+        <div class="my-4 flex items-center justify-between px-6 text-ctp-subtext0">
+            <p class="italic">I use Arch btw</p>
+            <button
+                class="rounded-md p-3 ring-ctp-peach transition-colors hover:bg-ctp-surface0 hover:text-ctp-text hover:underline focus:outline-none focus:ring-4"
+                ><a href="https://github.com/warbacon/personal-website">Source code</a></button
+            >
+        </div>
+    </footer>
 </Layout>
