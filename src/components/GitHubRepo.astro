@@ -6,7 +6,6 @@ interface Props {
 }
 
 const { owner = "warbacon", repo, imageUrl } = Astro.props;
-const github_link = `https://github.com/${owner}/${repo}`;
 
 const request = new Request(`https://api.github.com/repos/${owner}/${repo}`, {
     method: "GET",
@@ -24,7 +23,7 @@ const data = await response.json();
 <div
     class="max-w-sm rounded-lg border border-ctp-overlay0 bg-ctp-mantle shadow transition-colors hover:bg-ctp-crust dark:bg-ctp-surface0 dark:shadow-none dark:hover:bg-ctp-surface1"
 >
-    <a href={github_link}>
+    <a href={`https://github.com/${owner}/${repo}`}>
         <img
             class="aspect-[2/1] w-full rounded-t-lg object-cover"
             src={imageUrl}
