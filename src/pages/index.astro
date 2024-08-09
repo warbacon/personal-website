@@ -11,7 +11,7 @@ import GitHubRepo from "../components/GitHubRepo.astro";
             <p class="mt-2 text-ctp-subtext0">Linux enthusiast and Web Designer.</p>
         </section>
         <section class="space-y-4">
-            <h3 class="scroll-mt-24 text-balance text-3xl font-bold">About Me</h3>
+            <h2 class="scroll-mt-24 text-balance text-3xl font-bold">About Me</h2>
             <p>
                 Hi! My name is Joaquín Guerra Tocino, I'm from Spain and I study Computer Science in
                 the University of Cádiz.
@@ -27,7 +27,7 @@ import GitHubRepo from "../components/GitHubRepo.astro";
             </p>
         </section>
         <section class="space-y-4">
-            <h3 class="scroll-mt-24 text-3xl font-bold">Skills</h3>
+            <h2 class="scroll-mt-24 text-3xl font-bold">Skills</h2>
             <p>
                 I am proficient in C, C++, and Python. I frequently use Svelte and Astro.
                 Additionally, I am capable of writing intricate and complex scripts. I also know
@@ -35,7 +35,7 @@ import GitHubRepo from "../components/GitHubRepo.astro";
             </p>
         </section>
         <section class="space-y-4">
-            <h3 class="scroll-mt-24 text-3xl font-bold">Projects</h3>
+            <h2 class="scroll-mt-24 text-3xl font-bold">Projects</h2>
             <div class="flex flex-col gap-4 md:grid md:grid-cols-2">
                 <GitHubRepo
                     repo="zunder-zsh"
@@ -52,10 +52,11 @@ import GitHubRepo from "../components/GitHubRepo.astro";
         <div class="h-[1px] w-full bg-ctp-surface2 px-6"></div>
         <div class="my-4 flex items-center justify-between px-6 text-ctp-subtext0">
             <p class="italic">I use Arch btw</p>
-            <button
-                class="rounded-md p-3 ring-ctp-peach transition-colors hover:bg-ctp-surface0 hover:text-ctp-text hover:underline focus:outline-none focus:ring-4"
-                ><a href="https://github.com/warbacon/personal-website">Source code</a></button
+            <div
+                class="rounded-md px-4 py-3 ring-ctp-peach transition-colors hover:bg-ctp-surface0 hover:text-ctp-text hover:underline focus:outline-none focus:ring-4"
             >
+                <a href="https://github.com/warbacon/personal-website">Source code</a>
+            </div>
         </div>
     </footer>
 </Layout>
