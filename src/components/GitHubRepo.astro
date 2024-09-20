@@ -23,7 +23,9 @@ const { owner = "warbacon", repo, imageUrl } = Astro.props;
             <h3 class="text-xl font-bold capitalize tracking-tight">
                 {repo}
             </h3>
-            <RepoData server:defer owner={owner} repo={repo} />
+        <RepoData server:defer owner={owner} repo={repo}>
+            <p slot="fallback">Loading...</p>
+        </RepoData>
         </div>
     </a>
 </div>
