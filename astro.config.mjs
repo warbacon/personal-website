@@ -1,15 +1,11 @@
 // @ts-check
-import { defineConfig, envField } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel";
+import { defineConfig } from "astro/config";
+
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [tailwind()],
-    adapter: vercel(),
-    env: {
-        schema: {
-            GITHUB_TOKEN: envField.string({ context: "server", access: "secret" }),
-        },
-    },
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

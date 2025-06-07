@@ -1,34 +1,39 @@
 {
-    "name": "personal-website",
-    "type": "module",
-    "version": "0.0.1",
-    "scripts": {
-        "dev": "astro dev",
-        "build": "astro build",
-        "preview": "astro preview",
-        "astro": "astro",
-        "format": "prettier --write ."
-    },
-    "dependencies": {
-        "@astrojs/tailwind": "^5.1.5",
-        "@astrojs/vercel": "^8.0.4",
-        "@fontsource-variable/dm-sans": "^5.1.1",
-        "@tailwindcss/vite": "^4.0.0",
-        "astro": "^5.1.9",
-        "tailwindcss": "^3.4.17"
-    },
-    "devDependencies": {
-        "@catppuccin/tailwindcss": "^0.1.6",
-        "prettier": "^3.4.2",
-        "prettier-plugin-astro": "^0.14.1",
-        "prettier-plugin-tailwindcss": "^0.6.11"
-    },
-    "prettier": {
-        "printWidth": 120,
-        "tabWidth": 4,
-        "plugins": [
-            "prettier-plugin-astro",
-            "prettier-plugin-tailwindcss"
-        ]
-    }
+  "name": "personal-website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier . --write"
+  },
+  "dependencies": {
+    "@fontsource-variable/geist": "^5.2.6",
+    "@fontsource-variable/geist-mono": "^5.2.6",
+    "@lucide/astro": "^0.513.0",
+    "@tailwindcss/vite": "^4.1.8",
+    "astro": "^5.9.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss": "^4.1.8"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-astro",
+      "prettier-plugin-tailwindcss"
+    ],
+    "overrides": [
+      {
+        "files": "*.astro",
+        "options": {
+          "parser": "astro"
+        }
+      }
+    ]
+  },
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.6.12"
+  }
 }

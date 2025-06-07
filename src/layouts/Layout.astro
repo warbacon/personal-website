@@ -1,40 +1,31 @@
 ---
-import { ClientRouter } from "astro:transitions";
-import "@fontsource-variable/dm-sans";
-import gitHubIcon from "../assets/github.svg?raw";
+import "../styles/global.css";
+import "@fontsource-variable/geist";
+import "@fontsource-variable/geist-mono";
+import Header from "../components/Header.astro";
 
 interface Props {
-    title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" transition:animate="none">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-        <ClientRouter />
-    </head>
-    <body class="ctp-latte scroll-smooth bg-ctp-base text-ctp-text dark:ctp-mocha">
-        <header
-            class="sticky top-0 flex items-center justify-between border-b border-b-ctp-surface0 bg-ctp-crust bg-opacity-75 px-6 backdrop-blur"
-        >
-            <nav>
-                <ul class="flex gap-6 py-6 text-lg font-bold">
-                    <li><a class="hover:underline" href="/">Portfolio</a></li>
-                    <li><a class="hover:underline" href="/blog">Blog</a></li>
-                </ul>
-            </nav>
-            <a aria-label="Visit Warbacon's GitHub profile" href="https://github.com/warbacon">
-                <Fragment set:html={gitHubIcon} />
-            </a>
-        </header>
-        <slot />
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ?? "Warbacon"}</title>
+  </head>
+  <body
+    class="bg-zinc-200 font-mono text-zinc-950 dark:bg-zinc-900 dark:text-zinc-100"
+  >
+    <Header />
+    <div class="mx-auto max-w-[80ch] px-6 lg:px-0">
+      <slot />
+    </div>
+  </body>
 </html>

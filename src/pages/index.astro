@@ -1,61 +1,106 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import GitHubRepo from "../components/GitHubRepo.astro";
-export const prerender = false;
 ---
 
 <Layout title="Warbacon - Portfolio">
-    <main class="m-auto max-w-prose space-y-16 px-6 md:px-0">
-        <section class="my-20 flex flex-col items-start justify-center gap-2 md:items-center">
-            <h2 class="text-3xl font-bold text-ctp-peach">Computer Engineering Student</h2>
-            <h1 class="text-7xl font-bold">Joaquín Guerra</h1>
-            <p class="mt-2 text-ctp-subtext0">Linux enthusiast and Web Designer.</p>
-        </section>
-        <section class="space-y-4">
-            <h2 class="scroll-mt-24 text-balance text-3xl font-bold">About Me</h2>
-            <p>
-                Hi! My name is Joaquín Guerra Tocino, I'm from Spain and I study Computer Engineering in the University
-                of Cádiz.
-            </p>
-            <p>
-                I love tinkering with my system and making it my own, developing efficient ways to do my job, and that's
-                why I love Linux!
-            </p>
-            <p>
-                I have extensive knowledge of web technologies, always try to keep up to date with the most
-                revolutionary and, above all, I'm not afraid to learn something new on a daily basis!
-            </p>
-        </section>
-        <section class="space-y-4">
-            <h2 class="scroll-mt-24 text-3xl font-bold">Skills</h2>
-            <p>
-                I am proficient in C, C++, and Python. I frequently use Svelte and Astro. Additionally, I am capable of
-                writing intricate and complex scripts. I also know more about Linux than I probably should.
-            </p>
-        </section>
-        <section class="space-y-4">
-            <h2 class="scroll-mt-24 text-3xl font-bold">Projects</h2>
-            <div class="flex flex-col gap-4 md:grid md:grid-cols-2">
-                <GitHubRepo
-                    repo="zunder-zsh"
-                    imageUrl="https://repository-images.githubusercontent.com/441279901/c92ca975-c53b-420f-866b-e548f5f29ffe"
-                />
-                <GitHubRepo
-                    repo="baconclock"
-                    imageUrl="https://repository-images.githubusercontent.com/601216652/587e54ae-baad-4e07-9041-099b2ce6b899"
-                />
-            </div>
-        </section>
-    </main>
-    <footer class="mx-auto mt-10 max-w-[80ch] gap-3">
-        <div class="h-[1px] w-full bg-ctp-surface2 px-6"></div>
-        <div class="my-4 flex items-center justify-between px-6 text-ctp-subtext0">
-            <p class="italic">I use Arch btw</p>
-            <div
-                class="rounded-md px-4 py-3 ring-ctp-peach transition-colors hover:bg-ctp-surface0 hover:text-ctp-text hover:underline focus:outline-none focus:ring-4"
-            >
-                <a href="https://github.com/warbacon/personal-website">Source code</a>
-            </div>
-        </div>
-    </footer>
+  <main class="my-6 space-y-8">
+    <section>
+      <h3 class="text-3xl font-bold" id="about">About me</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas fugit ex
+        enim, iste accusantium maiores doloremque voluptatum magnam ipsam,
+        pariatur porro! Molestiae, dolore similique. Laudantium quia debitis aut
+        similique dolore? Error rem facere libero sapiente nulla accusantium
+        sint, ullam quas a ratione ab. Harum quae ex rem necessitatibus
+        distinctio velit eligendi hic quod ad minima, doloremque recusandae,
+        dolore non itaque? Quidem et reiciendis labore exercitationem
+        voluptatem? Iste nihil autem molestias ratione quaerat consequuntur
+        culpa possimus optio corrupti, quam vitae amet repellendus eius cum,
+        voluptatibus mollitia maiores expedita, est tenetur natus. Aut
+        aspernatur qui rem odio, cupiditate necessitatibus ducimus, praesentium,
+        molestias nulla explicabo maxime nostrum unde tempore? Corporis, quia
+        itaque quaerat beatae eius quis animi modi porro tempore, accusamus,
+        aliquam omnis. Facilis explicabo facere totam dolores a illum fuga,
+        earum molestiae saepe dolore fugit consectetur voluptatum ipsa eius
+        ipsum, eos reiciendis assumenda voluptate autem eum voluptatem natus
+        quod veniam quo! Minus! Voluptatibus velit sed dolorem necessitatibus
+        qui optio dolor numquam similique atque! Similique exercitationem
+        aliquam illum! Alias atque eius veritatis. Dolorem eveniet cumque
+        voluptatibus delectus magni atque, sit nobis rerum optio.
+      </p>
+    </section>
+    <section>
+      <h3 class="text-3xl font-bold" id="projects">Projects</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas fugit ex
+        enim, iste accusantium maiores doloremque voluptatum magnam ipsam,
+        pariatur porro! Molestiae, dolore similique. Laudantium quia debitis aut
+        similique dolore? Error rem facere libero sapiente nulla accusantium
+        sint, ullam quas a ratione ab. Harum quae ex rem necessitatibus
+        distinctio velit eligendi hic quod ad minima, doloremque recusandae,
+        dolore non itaque? Quidem et reiciendis labore exercitationem
+        voluptatem? Iste nihil autem molestias ratione quaerat consequuntur
+        culpa possimus optio corrupti, quam vitae amet repellendus eius cum,
+        voluptatibus mollitia maiores expedita, est tenetur natus. Aut
+        aspernatur qui rem odio, cupiditate necessitatibus ducimus, praesentium,
+        molestias nulla explicabo maxime nostrum unde tempore? Corporis, quia
+        itaque quaerat beatae eius quis animi modi porro tempore, accusamus,
+        aliquam omnis. Facilis explicabo facere totam dolores a illum fuga,
+        earum molestiae saepe dolore fugit consectetur voluptatum ipsa eius
+        ipsum, eos reiciendis assumenda voluptate autem eum voluptatem natus
+        quod veniam quo! Minus! Voluptatibus velit sed dolorem necessitatibus
+        qui optio dolor numquam similique atque! Similique exercitationem
+        aliquam illum! Alias atque eius veritatis. Dolorem eveniet cumque
+        voluptatibus delectus magni atque, sit nobis rerum optio.
+      </p>
+    </section>
+    <section>
+      <h3 class="text-3xl font-bold" id="skills">Skills</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas fugit ex
+        enim, iste accusantium maiores doloremque voluptatum magnam ipsam,
+        pariatur porro! Molestiae, dolore similique. Laudantium quia debitis aut
+        similique dolore? Error rem facere libero sapiente nulla accusantium
+        sint, ullam quas a ratione ab. Harum quae ex rem necessitatibus
+        distinctio velit eligendi hic quod ad minima, doloremque recusandae,
+        dolore non itaque? Quidem et reiciendis labore exercitationem
+        voluptatem? Iste nihil autem molestias ratione quaerat consequuntur
+        culpa possimus optio corrupti, quam vitae amet repellendus eius cum,
+        voluptatibus mollitia maiores expedita, est tenetur natus. Aut
+        aspernatur qui rem odio, cupiditate necessitatibus ducimus, praesentium,
+        molestias nulla explicabo maxime nostrum unde tempore? Corporis, quia
+        itaque quaerat beatae eius quis animi modi porro tempore, accusamus,
+        aliquam omnis. Facilis explicabo facere totam dolores a illum fuga,
+        earum molestiae saepe dolore fugit consectetur voluptatum ipsa eius
+        ipsum, eos reiciendis assumenda voluptate autem eum voluptatem natus
+        quod veniam quo! Minus! Voluptatibus velit sed dolorem necessitatibus
+        qui optio dolor numquam similique atque! Similique exercitationem
+        aliquam illum! Alias atque eius veritatis. Dolorem eveniet cumque
+        voluptatibus delectus magni atque, sit nobis rerum optio.
+      </p>
+    </section>
+  </main>
 </Layout>
+
+<script>
+  document.querySelectorAll('a[href^="/#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").split("#")[1];
+      const targetEl = document.getElementById(targetId);
+
+      if (targetEl) {
+        const headerHeight =
+          document.querySelector("header")?.offsetHeight || 66;
+        const offset = headerHeight + 46;
+        const elementPosition = targetEl.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+</script>
