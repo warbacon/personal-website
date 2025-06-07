@@ -3,14 +3,14 @@ import { Sun, Moon } from "@lucide/astro";
 
 const links = [
   { name: "About me", route: "/#about" },
-  { name: "Projects", route: "/#projects" },
   { name: "Skills", route: "/#skills" },
+  { name: "Projects", route: "/#projects" },
   { name: "Blog", route: "/blog" },
 ];
 ---
 
 <header
-  class="sticky top-0 mb-8 flex max-w-[100ch] items-center justify-between border-b border-zinc-400 bg-zinc-50/90 p-3 backdrop-blur md:top-4 md:mx-auto md:mt-4 md:rounded-full md:border dark:border-zinc-700 dark:bg-zinc-800/90"
+  class="sticky top-0 flex max-w-[100ch] items-center justify-between border-b border-zinc-400 bg-zinc-50/90 p-3 backdrop-blur md:top-4 md:mx-auto md:mt-4 md:rounded-full md:border dark:border-zinc-700 dark:bg-zinc-800/90"
 >
   <nav>
     <ul class="flex gap-1">
@@ -18,7 +18,7 @@ const links = [
         links.map(({ name, route }) => (
           <li>
             <a
-              class="block rounded-full px-4 py-2 text-nowrap transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 hover:dark:bg-zinc-50/10"
+              class="hidden rounded-full px-4 py-2 text-nowrap transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 md:block hover:dark:bg-zinc-50/10"
               href={route}
             >
               {name}
@@ -31,7 +31,7 @@ const links = [
   <div>
     <button
       id="theme-toggle"
-      class="block rounded-full px-4 py-2 text-nowrap transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 hover:dark:bg-zinc-50/10"
+      class="block cursor-pointer rounded-full px-4 py-2 text-nowrap transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 hover:dark:bg-zinc-50/10"
       aria-label="Toggle theme"
     >
       <Sun id="icon-sun" class="h-5 w-5 dark:hidden" />
