@@ -28,34 +28,5 @@ const { title } = Astro.props;
     <div class="mx-auto max-w-[80ch] px-6 lg:px-0">
       <slot />
     </div>
-    <button
-      id="upButton"
-      class="pointer-events-none fixed right-10 bottom-10 w-fit cursor-pointer rounded-full bg-teal-700 p-2.5 font-medium text-zinc-100 opacity-0 transition-[opacity,background-color] hover:bg-teal-600 dark:bg-teal-300 dark:text-zinc-900 hover:dark:bg-teal-200"
-    >
-      <ArrowUp />
-    </button>
   </body>
 </html>
-
-<script>
-  const upButton = document.getElementById("upButton");
-
-  const toggleUpButton = () => {
-    const shouldShow = window.scrollY > 200;
-    upButton?.classList.toggle("opacity-0", !shouldShow);
-    upButton?.classList.toggle("pointer-events-none", !shouldShow);
-    upButton?.classList.toggle("opacity-100", shouldShow);
-  };
-
-  window.addEventListener("scroll", toggleUpButton);
-  document.addEventListener("DOMContentLoaded", toggleUpButton);
-
-  upButton?.addEventListener("click", () => {
-    window.scrollTo({ top: 0 });
-    history.replaceState(
-      null,
-      "",
-      window.location.pathname + window.location.search,
-    );
-  });
-</script>
