@@ -1,5 +1,7 @@
 ---
-import { Sun, Moon, Menu } from "@lucide/astro";
+import Sun from "@lucide/astro/icons/sun";
+import Moon from "@lucide/astro/icons/moon";
+import Menu from "@lucide/astro/icons/menu";
 
 const links = [
   { name: "About me", route: "/#about" },
@@ -36,13 +38,13 @@ const links = [
       aria-label="Toggle menu"
       aria-expanded="false"
     >
-    <Menu />
+      <Menu />
     </button>
 
     <!-- Dropdown -->
     <div
       id="mobile-menu"
-      class="absolute left-0 top-full mt-2 hidden w-48 rounded-lg border border-zinc-300 bg-zinc-50/95 p-2 shadow-lg backdrop-blur md:hidden dark:border-zinc-700 dark:bg-zinc-800/95"
+      class="absolute top-full left-0 mt-2 hidden w-48 rounded-lg border border-zinc-300 bg-zinc-50/95 p-2 shadow-lg backdrop-blur md:hidden dark:border-zinc-700 dark:bg-zinc-800/95"
     >
       <ul class="space-y-1">
         {
@@ -76,36 +78,38 @@ const links = [
 
 <script>
   // Hamburger menu toggle
-  document.getElementById('mobile-menu-toggle')?.addEventListener('click', () => {
-    const menu = document.getElementById('mobile-menu');
-    const button = document.getElementById('mobile-menu-toggle');
+  document
+    .getElementById("mobile-menu-toggle")
+    ?.addEventListener("click", () => {
+      const menu = document.getElementById("mobile-menu");
+      const button = document.getElementById("mobile-menu-toggle");
 
-    if (menu?.classList.contains('hidden')) {
-      menu.classList.remove('hidden');
-      button?.setAttribute('aria-expanded', 'true');
-    } else {
-      menu?.classList.add('hidden');
-      button?.setAttribute('aria-expanded', 'false');
-    }
-  });
+      if (menu?.classList.contains("hidden")) {
+        menu.classList.remove("hidden");
+        button?.setAttribute("aria-expanded", "true");
+      } else {
+        menu?.classList.add("hidden");
+        button?.setAttribute("aria-expanded", "false");
+      }
+    });
 
   // Close menu
-  document.addEventListener('click', (e) => {
-    const menu = document.getElementById('mobile-menu');
-    const button = document.getElementById('mobile-menu-toggle');
+  document.addEventListener("click", (e) => {
+    const menu = document.getElementById("mobile-menu");
+    const button = document.getElementById("mobile-menu-toggle");
 
     if (!button?.contains(e.target) && !menu?.contains(e.target)) {
-      menu?.classList.add('hidden');
-      button?.setAttribute('aria-expanded', 'false');
+      menu?.classList.add("hidden");
+      button?.setAttribute("aria-expanded", "false");
     }
   });
-  document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      const menu = document.getElementById('mobile-menu');
-      const button = document.getElementById('mobile-menu-toggle');
+  document.querySelectorAll("#mobile-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      const menu = document.getElementById("mobile-menu");
+      const button = document.getElementById("mobile-menu-toggle");
 
-      menu?.classList.add('hidden');
-      button?.setAttribute('aria-expanded', 'false');
+      menu?.classList.add("hidden");
+      button?.setAttribute("aria-expanded", "false");
     });
   });
 
