@@ -1,5 +1,5 @@
 ---
-import { Sun, Moon } from "@lucide/astro";
+import { Sun, Moon, Menu } from "@lucide/astro";
 
 const links = [
   { name: "About me", route: "/#about" },
@@ -12,13 +12,14 @@ const links = [
 <header
   class="sticky top-0 flex max-w-[100ch] items-center justify-between border-b border-zinc-300 bg-zinc-50/90 p-3 backdrop-blur md:top-4 md:mx-auto md:mt-4 md:rounded-full md:border dark:border-zinc-700 dark:bg-zinc-800/90"
 >
-  <nav>
-    <ul class="flex gap-1">
+  <nav class="relative">
+    <!-- Desktop menu -->
+    <ul class="hidden gap-1 md:flex">
       {
         links.map(({ name, route }) => (
           <li>
             <a
-              class="hidden rounded-full px-4 py-2 text-nowrap transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 md:block hover:dark:bg-zinc-50/10"
+              class="rounded-full px-4 py-2 text-nowrap transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 hover:dark:bg-zinc-50/10"
               href={route}
             >
               {name}
@@ -27,7 +28,40 @@ const links = [
         ))
       }
     </ul>
+
+    <!-- Hamburger menu -->
+    <button
+      id="mobile-menu-toggle"
+      class="block cursor-pointer rounded-full px-3 py-2 transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 md:hidden hover:dark:bg-zinc-50/10"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+    <Menu />
+    </button>
+
+    <!-- Dropdown -->
+    <div
+      id="mobile-menu"
+      class="absolute left-0 top-full mt-2 hidden w-48 rounded-lg border border-zinc-300 bg-zinc-50/95 p-2 shadow-lg backdrop-blur md:hidden dark:border-zinc-700 dark:bg-zinc-800/95"
+    >
+      <ul class="space-y-1">
+        {
+          links.map(({ name, route }) => (
+            <li>
+              <a
+                class="block rounded-md px-3 py-2 text-sm transition-[background-color] hover:bg-zinc-950/10 hover:dark:bg-zinc-50/10"
+                href={route}
+              >
+                {name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </nav>
+
+  <!-- Light/Dark mode -->
   <div>
     <button
       id="theme-toggle"
@@ -40,7 +74,42 @@ const links = [
   </div>
 </header>
 
-<script is:inline>
+<script>
+  // Hamburger menu toggle
+  document.getElementById('mobile-menu-toggle')?.addEventListener('click', () => {
+    const menu = document.getElementById('mobile-menu');
+    const button = document.getElementById('mobile-menu-toggle');
+
+    if (menu?.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+      button?.setAttribute('aria-expanded', 'true');
+    } else {
+      menu?.classList.add('hidden');
+      button?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close menu
+  document.addEventListener('click', (e) => {
+    const menu = document.getElementById('mobile-menu');
+    const button = document.getElementById('mobile-menu-toggle');
+
+    if (!button?.contains(e.target) && !menu?.contains(e.target)) {
+      menu?.classList.add('hidden');
+      button?.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      const button = document.getElementById('mobile-menu-toggle');
+
+      menu?.classList.add('hidden');
+      button?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Theme toggle
   const toggleBtn = document.getElementById("theme-toggle");
   const root = document.documentElement;
 
