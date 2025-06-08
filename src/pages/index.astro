@@ -1,41 +1,98 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Warbacon - Portfolio">
   <main class="my-6 space-y-16">
     <Hero />
     <section class="space-y-5">
-      <h3 class="text-3xl font-bold" id="about">About me</h3>
+      <h3
+        class="text-3xl font-bold text-teal-700 dark:text-teal-400"
+        id="about"
+      >
+        About me
+      </h3>
       <article class="space-y-3">
         <p>
-          Hi! My name is Joaquín Guerra Tocino, I'm from Spain and I study
-          Computer Engineering in the University of Cadiz.
+          Hey there! I'm <b>Joaquín Guerra Tocino</b>, a Computer Engineering
+          student in my final year at the University of Cádiz, Spain.
         </p>
         <p>
-          I love tinkering with my system and making it my own, developing
-          efficient ways to do my job, and that's why I love Linux!
+          I'm passionate about free software, minimalism, and having full
+          control over my setup. Whether it's tweaking a shell config,
+          optimizing a workflow, or diving deep into Linux internals, I love
+          making my system truly mine.
         </p>
         <p>
-          I have extensive knowledge of web technologies, always try to keep up
-          to date with the most revolutionary and, above all, I'm not afraid to
-          learn something new on a daily basis!
+          I mostly develop in <b>C++</b>, <b>Python</b> and <b>Lua</b>, but I'm
+          always exploring new languages and tools.
+        </p>
+        <p>
+          When it comes to the web, I have strong experience with modern
+          technologies and frameworks. I'm especially fond of <b>Astro</b> and <b
+            >Svelte</b
+          > — I love how they let me build fast, clean, and expressive user interfaces
+          with minimal overhead. I always try to stay up to date with the latest
+          trends, and I'm never afraid to dive into something new.
         </p>
       </article>
     </section>
     <section class="space-y-5">
-      <h3 class="text-3xl font-bold" id="skills">Skills</h3>
+      <h3
+        class="text-3xl font-bold text-teal-700 dark:text-teal-400"
+        id="skills"
+      >
+        Skills
+      </h3>
       <article class="space-y-3">
-        <p>
-          I am proficient in C, C++, and Python. I frequently use Svelte and
-          Astro. Additionally, I am capable of writing intricate and complex
-          scripts. I also know more about Linux than I probably should.
-        </p>
+        <h4 class="text-xl font-bold">Programming languages</h4>
+        <ul class="list-inside list-disc space-y-2">
+          <li>
+            <b>C</b> – Solid experience through university projects.
+          </li>
+          <li>
+            <b>C++</b> – Used extensively in academic. Currently building a custom
+            PDF reader application with it.
+          </li>
+          <li>
+            <b>Python</b> – Go-to language for scripting, automation, and general-purpose
+            development when performance isn't a top priority.
+          </li>
+          <li>
+            <b>Lua</b> – Primarily used in my Neovim setup for custom configurations
+            and plugin development. I really enjoy its simplicity and speed.
+          </li>
+          <li>
+            <b>Bash</b> – Daily driver for scripting in my system. I use it for system
+            automation, dotfiles, and maintaining custom workflows.
+          </li>
+          <li>
+            <b>JavaScript</b> – Used mainly with Astro and Svelte, but also familiar
+            with vanilla JS and modern tooling.
+          </li>
+          <li>
+            <b>Nix</b> – Currently learning as part of my daily use of NixOS.
+          </li>
+          <li>
+            <b>PHP</b> – Used in a university project to build a forum application,
+            both with raw PHP and using the Laravel framework.
+          </li>
+        </ul>
+
+        <h4 class="text-xl font-bold">Web technologies</h4>
+        <h4 class="text-xl font-bold">Operating systems</h4>
+        <h4 class="text-xl font-bold">Tools</h4>
       </article>
     </section>
     <section class="space-y-5">
-      <h3 class="text-3xl font-bold" id="projects">Projects</h3>
+      <h3
+        class="text-3xl font-bold text-teal-700 dark:text-teal-400"
+        id="projects"
+      >
+        Projects
+      </h3>
       <article class="space-y-3">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas fugit
@@ -63,36 +120,11 @@ import Hero from "../components/Hero.astro";
       </article>
     </section>
   </main>
-  <footer
-    class="mt-10 flex justify-between border-t-1 border-t-zinc-400 pt-10 text-zinc-600 dark:border-t-zinc-700 dark:text-zinc-400"
-  >
-    <p class="italic">I use NixOS BTW</p>
-    <a
-      class="block rounded-full px-4 py-2 text-nowrap transition-all hover:bg-zinc-950/10 hover:text-zinc-900 active:scale-95 hover:dark:bg-zinc-50/10 dark:hover:text-zinc-100"
-      href="https://github.com/warbacon/personal-website">Source code</a
-    >
-  </footer>
+  <Footer />
 </Layout>
 
-<script>
-  document.querySelectorAll('a[href^="/#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href").split("#")[1];
-      const targetEl = document.getElementById(targetId);
-
-      if (targetEl) {
-        const headerHeight =
-          document.querySelector("header")?.offsetHeight || 66;
-        const offset = headerHeight + 32;
-        const elementPosition = targetEl.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
-    });
-  });
-</script>
+<style>
+  *[id] {
+    scroll-margin-top: 100px;
+  }
+</style>
