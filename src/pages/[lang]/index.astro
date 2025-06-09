@@ -1,0 +1,59 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import Footer from "@/components/Footer.astro";
+import GithubRepo from "@/components/GithubRepo.astro";
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+export const getStaticPaths = (() => {
+  return [{ params: { lang: "en" } }, { params: { lang: "es" } }];
+}) satisfies GetStaticPaths;
+---
+
+<Layout title="Warbacon - Portfolio">
+  <main class="my-6 space-y-16">
+    <Hero />
+    <section class="space-y-5">
+      <h3
+        class="text-3xl font-bold text-teal-700 dark:text-teal-400"
+        id="about"
+      >
+        {t("sections.about")}
+      </h3>
+      <article class="space-y-3" set:html={t("sections.about.content")} />
+    </section>
+    <section class="space-y-5">
+      <h3
+        class="text-3xl font-bold text-teal-700 dark:text-teal-400"
+        id="projects"
+      >
+        {t("sections.projects")}
+      </h3>
+      <article class="space-y-3">
+        <GithubRepo repo="zunder-zsh" />
+        <GithubRepo repo="baconclock" />
+      </article>
+    </section>
+    <section class="space-y-5">
+      <h3
+        class="text-3xl font-bold text-teal-700 dark:text-teal-400"
+        id="skills"
+      >
+        {t("sections.skills")}
+      </h3>
+      <article class="space-y-3" set:html={t("sections.skills.content")} />
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  *[id] {
+    scroll-margin-top: 100px;
+  }
+</style>

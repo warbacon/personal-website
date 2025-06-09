@@ -15,6 +15,14 @@ export default defineConfig({
       expiration: 60 * 60 * 24,
     },
   }),
+  i18n: {
+    defaultLocale: "en",
+    locales: ["es", "en"],
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
+    },
+  },
   env: {
     schema: {
       GITHUB_TOKEN: envField.string({

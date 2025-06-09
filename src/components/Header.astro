@@ -3,10 +3,24 @@ import Sun from "@lucide/astro/icons/sun";
 import Moon from "@lucide/astro/icons/moon";
 import Menu from "@lucide/astro/icons/menu";
 
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+function getCleanLocaleUrl(lang: string, anchor: string) {
+  const base = getRelativeLocaleUrl(lang, "/");
+  return base.replace(/\/$/, "") + anchor;
+}
+
 const links = [
-  { name: "About me", route: "/#about" },
-  { name: "Projects", route: "/#projects" },
-  { name: "Skills", route: "/#skills" },
+  { name: t("sections.about"), route: getCleanLocaleUrl(lang, "#about") },
+  {
+    name: t("sections.projects"),
+    route: getCleanLocaleUrl(lang, "#projects"),
+  },
+  { name: t("sections.skills"), route: getCleanLocaleUrl(lang, "#skills") },
   { name: "Blog", route: "/blog" },
 ];
 ---

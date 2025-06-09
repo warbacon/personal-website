@@ -1,6 +1,11 @@
 ---
-import LinkButton from "../components/LinkButton.astro";
-import GithubIcon from "../components/GithubIcon.astro";
+import LinkButton from "@/components/LinkButton.astro";
+import GithubIcon from "@/components/GithubIcon.astro";
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="my-40 flex flex-col gap-10">
@@ -9,12 +14,12 @@ import GithubIcon from "../components/GithubIcon.astro";
       Joaquín Guerra
     </h1>
     <h2 class="text-2xl text-zinc-800 dark:text-zinc-200">
-      Computer Engineering Student
+      {t("about.profession")}
     </h2>
   </article>
   <article class="flex items-center gap-6">
     <LinkButton href="mailto:joaquinguerratocino@gmail.com"
-      >Contact me!</LinkButton
+      >{t("button.contact")}</LinkButton
     >
     <a href="https://github.com/warbacon"><GithubIcon /></a>
   </article>
