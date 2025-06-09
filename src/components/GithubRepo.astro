@@ -1,31 +1,43 @@
 ---
-import { GITHUB_TOKEN } from "astro:env/server";
+import { getSecret } from "astro:env/server";
+import Star from "@lucide/astro/icons/star";
+import LinkButton from "./LinkButton.astro";
 
 interface Props {
-    owner: string;
-    repo: string;
+  owner?: string;
+  repo: string;
 }
 
-const repo = `${Astro.props.owner ?? "warbacon"}/${Astro.props.repo}`;
+const { owner = "warbacon", repo } = Astro.props;
 
-const res = await fetch(`https://api.github.com/repos/${repo}`, {
-    method: "GET",
-    headers: {
-        Accept: "application/vnd.github+json",
-        Authorization: `Bearer ${GITHUB_TOKEN}`,
-        "X-GitHub-Api-Version": "2022-11-28",
-    },
+const GITHUB_TOKEN = getSecret("GITHUB_TOKEN");
+
+const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+  method: "GET",
+  headers: {
+    Accept: "application/vnd.github+json",
+    Authorization: `Bearer ${GITHUB_TOKEN}`,
+    "X-GitHub-Api-Version": "2022-11-28",
+  },
 });
 
 if (!res.ok) {
-    throw new Error(`GitHub API error: ${res.status} ${res.statusText}`);
+  throw new Error(`GitHub API error: ${res.status} ${res.statusText}`);
 }
 
 const repoData = await res.json();
 ---
 
-<div class="github-repo">
-    <h2>{repoData.full_name}</h2>
-    <p>{repoData.description}</p>
-    <p>⭐ {repoData.stargazers_count} stars</p>
-</div>
+<a
+  href={`https://github.com/${owner}/${repo}`}
+  class="flex flex-col gap-1 rounded-xl border-1 border-zinc-300 bg-zinc-100 p-3 transition-[border-color,scale] hover:border-zinc-400 active:scale-98 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
+>
+  <h2 class="text-xl font-bold">{repoData.name}</h2>
+  <p>{repoData.description}</p>
+  <div class="flex items-center gap-1 text-yellow-600 dark:text-yellow-200">
+    <Star size={18} />
+    <p>
+      {repoData.stargazers_count}
+    </p>
+  </div>
+</a>
