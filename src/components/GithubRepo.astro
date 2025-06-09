@@ -1,0 +1,31 @@
+---
+import { GITHUB_TOKEN } from "astro:env/server";
+
+interface Props {
+    owner: string;
+    repo: string;
+}
+
+const repo = `${Astro.props.owner ?? "warbacon"}/${Astro.props.repo}`;
+
+const res = await fetch(`https://api.github.com/repos/${repo}`, {
+    method: "GET",
+    headers: {
+        Accept: "application/vnd.github+json",
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
+        "X-GitHub-Api-Version": "2022-11-28",
+    },
+});
+
+if (!res.ok) {
+    throw new Error(`GitHub API error: ${res.status} ${res.statusText}`);
+}
+
+const repoData = await res.json();
+---
+
+<div class="github-repo">
+    <h2>{repoData.full_name}</h2>
+    <p>{repoData.description}</p>
+    <p>⭐ {repoData.stargazers_count} stars</p>
+</div>

@@ -10,6 +10,7 @@
     "format": "prettier . --write"
   },
   "dependencies": {
+    "@astrojs/vercel": "^8.1.5",
     "@fontsource-variable/geist": "^5.2.6",
     "@fontsource-variable/geist-mono": "^5.2.6",
     "@lucide/astro": "^0.513.0",
