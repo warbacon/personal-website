@@ -1,0 +1,21 @@
+---
+import LinkButton from "../components/LinkButton.astro";
+import GithubIcon from "../components/GithubIcon.astro";
+---
+
+<section class="my-40 flex flex-col gap-10">
+  <article class="flex flex-col gap-4">
+    <h1 class="text-6xl font-bold text-teal-700 dark:text-teal-400">
+      Joaquín Guerra
+    </h1>
+    <h2 class="text-2xl text-zinc-800 dark:text-zinc-200">
+      Computer Engineering Student
+    </h2>
+  </article>
+  <article class="flex items-center gap-6">
+    <LinkButton href="mailto:joaquinguerratocino@gmail.com"
+      >Contact me!</LinkButton
+    >
+    <a href="https://github.com/warbacon"><GithubIcon /></a>
+  </article>
+</section>
