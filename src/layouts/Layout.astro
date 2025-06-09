@@ -19,10 +19,20 @@ const { title } = Astro.props;
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=!" />
+
     <title>{title ?? "Warbacon"}</title>
+
+    <meta
+      name="description"
+      content="Joaquín Guerra Tocino's personal website."
+    />
+    <meta name="author" content="Joaquín Guerra Tocino" />
+    <meta name="keywords" content="portfolio,blog" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <script>
       const root = document.documentElement;
       const userTheme = localStorage.getItem("theme");
