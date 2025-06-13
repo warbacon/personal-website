@@ -9,6 +9,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  output: "server",
   adapter: vercel({
     isr: {
       // caches all pages on first request and saves for 1 day
