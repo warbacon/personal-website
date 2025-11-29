@@ -10,17 +10,17 @@
     "format": "prettier . --write"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.1.5",
-    "@fontsource-variable/geist-mono": "^5.2.6",
-    "@lucide/astro": "^0.513.0",
-    "@tailwindcss/vite": "^4.1.8",
-    "astro": "^5.9.1",
-    "prettier": "^3.5.3",
-    "tailwindcss": "^4.1.8"
+    "@astrojs/vercel": "^9.0.2",
+    "@fontsource-variable/google-sans-code": "^5.2.3",
+    "@lucide/astro": "^0.555.0",
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.16.2",
+    "prettier": "^3.7.2",
+    "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.12"
+    "prettier-plugin-tailwindcss": "^0.7.1"
   },
   "prettier": {
     "plugins": [

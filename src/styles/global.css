@@ -4,7 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-mono: "Geist Mono Variable", monospace;
+  --font-mono: "Google Sans Code Variable", monospace;
 }
 
 html {
