@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, envField } from "astro/config";
+import { defineConfig, envField, fontProviders } from "astro/config";
 import vercel from "@astrojs/vercel";
 
 import tailwindcss from "@tailwindcss/vite";
@@ -27,4 +27,12 @@ export default defineConfig({
       }),
     },
   },
+  fonts: [
+    {
+      name: "Space Grotesk",
+      cssVariable: "--font-space-grotesk",
+      provider: fontProviders.fontsource(),
+      weights: [400, 700],
+    },
+  ],
 });

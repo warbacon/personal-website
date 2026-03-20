@@ -19,12 +19,12 @@ const links = [
     route: goToSection("projects"),
   },
   { name: t("sections.skills"), route: goToSection("skills") },
-  { name: "Blog", route: "/blog" },
+  { name: "BLOG", route: "/blog" },
 ];
 ---
 
 <header
-  class="sticky top-0 flex max-w-[100ch] items-center justify-between border-b border-zinc-300 bg-zinc-50/90 p-3 backdrop-blur md:top-4 md:mx-auto md:mt-4 md:rounded-full md:border dark:border-zinc-700 dark:bg-zinc-800/90"
+  class="sticky top-0 flex max-w-[100ch] items-center justify-between border-b border-zinc-300 bg-zinc-50/90 p-3 backdrop-blur md:top-4 md:mx-auto md:mt-4 md:md:border dark:border-zinc-700 dark:bg-zinc-800/90"
 >
   <nav class="relative">
     <!-- Desktop menu -->
@@ -33,7 +33,7 @@ const links = [
         links.map(({ name, route }) => (
           <li>
             <a
-              class="block rounded-full px-4 py-2 text-nowrap transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 hover:dark:bg-zinc-50/10"
+              class="block px-4 py-2 text-nowrap transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 hover:dark:bg-zinc-50/10"
               href={route}
             >
               {name}
@@ -46,7 +46,7 @@ const links = [
     <!-- Hamburger menu -->
     <button
       id="mobile-menu-toggle"
-      class="block cursor-pointer rounded-full px-3 py-2 transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 md:hidden hover:dark:bg-zinc-50/10"
+      class="block cursor-pointer px-3 py-2 transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 md:hidden hover:dark:bg-zinc-50/10"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
@@ -56,14 +56,14 @@ const links = [
     <!-- Dropdown -->
     <div
       id="mobile-menu"
-      class="absolute top-full left-0 mt-2 hidden w-48 rounded-lg border border-zinc-300 bg-zinc-50/95 p-2 shadow-lg backdrop-blur md:hidden dark:border-zinc-700 dark:bg-zinc-800/95"
+      class="absolute top-full left-0 mt-2 hidden w-48 border border-zinc-300 bg-zinc-50/95 p-2 shadow-lg backdrop-blur md:hidden dark:border-zinc-700 dark:bg-zinc-800/95"
     >
       <ul class="space-y-1">
         {
           links.map(({ name, route }) => (
             <li>
               <a
-                class="block rounded-md px-3 py-2 text-sm transition-[background-color] hover:bg-zinc-950/10 hover:dark:bg-zinc-50/10"
+                class="block px-3 py-2 text-sm transition-[background-color] hover:bg-zinc-950/10 hover:dark:bg-zinc-50/10"
                 href={route}
               >
                 {name}
@@ -79,7 +79,7 @@ const links = [
   <div>
     <button
       id="theme-toggle"
-      class="block cursor-pointer rounded-full px-4 py-2 text-nowrap transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 hover:dark:bg-zinc-50/10"
+      class="block cursor-pointer px-4 py-2 text-nowrap transition-[background-color,scale] hover:bg-zinc-950/10 active:scale-95 hover:dark:bg-zinc-50/10"
       aria-label="Toggle theme"
     >
       <Sun id="icon-sun" class="h-5 w-5 dark:hidden" />

@@ -19,35 +19,36 @@ export const getStaticPaths = (() => {
   <main class="my-6 space-y-16">
     <Hero />
     <section class="space-y-5">
-      <h3
-        class="text-3xl font-bold text-teal-700 dark:text-teal-400"
-        id="about"
-      >
+      <h3 class="text-3xl font-bold" id="about">
+        <span class="text-teal-700 dark:text-teal-400">01</span>
         {t("sections.about")}
       </h3>
-      <article class="space-y-3" set:html={t("sections.about.content")} />
+      <article
+        class="space-y-3 text-zinc-800 dark:text-zinc-200"
+        set:html={t("sections.about.content")}
+      />
     </section>
     <section class="space-y-5">
-      <h3
-        class="text-3xl font-bold text-teal-700 dark:text-teal-400"
-        id="projects"
-      >
+      <h3 class="text-3xl font-bold" id="projects">
+        <span class="text-teal-700 dark:text-teal-400">02</span>
         {t("sections.projects")}
       </h3>
       <article class="space-y-3">
         <GithubRepo repo="zunder-zsh" />
+        <GithubRepo repo="pino.nvim" />
         <GithubRepo repo="baconclock" />
         <GithubRepo repo="undug" />
       </article>
     </section>
     <section class="space-y-5">
-      <h3
-        class="text-3xl font-bold text-teal-700 dark:text-teal-400"
-        id="skills"
-      >
+      <h3 class="text-3xl font-bold" id="skills">
+        <span class="text-teal-700 dark:text-teal-400">03</span>
         {t("sections.skills")}
       </h3>
-      <article class="space-y-3" set:html={t("sections.skills.content")} />
+      <article
+        class="space-y-3 text-zinc-800 dark:text-zinc-200"
+        set:html={t("sections.skills.content")}
+      />
     </section>
   </main>
   <Footer />
