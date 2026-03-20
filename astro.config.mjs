@@ -6,15 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()],
-  },
-  adapter: vercel({
-    isr: {
-      // caches all pages on first request and saves for 1 day
-      expiration: 60 * 60 * 24,
-    },
-  }),
+  adapter: vercel(),
   i18n: {
     defaultLocale: "en",
     locales: ["es", "en"],
@@ -35,4 +27,7 @@ export default defineConfig({
       weights: [400, 700],
     },
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

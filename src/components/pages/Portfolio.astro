@@ -4,6 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/Hero.astro";
 import Footer from "@/components/Footer.astro";
 import GithubRepo from "@/components/GithubRepo.astro";
+import GithubRepoFallback from "@/components/GithubRepoFallback.astro";
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
@@ -34,10 +35,18 @@ export const getStaticPaths = (() => {
         {t("sections.projects")}
       </h3>
       <article class="space-y-3">
-        <GithubRepo repo="zunder-zsh" />
-        <GithubRepo repo="pino.nvim" />
-        <GithubRepo repo="baconclock" />
-        <GithubRepo repo="undug" />
+        <GithubRepo repo="zunder-zsh" server:defer>
+          <GithubRepoFallback slot="fallback" />
+        </GithubRepo>
+        <GithubRepo repo="pino.nvim" server:defer>
+          <GithubRepoFallback slot="fallback" />
+        </GithubRepo>
+        <GithubRepo repo="baconclock" server:defer>
+          <GithubRepoFallback slot="fallback" />
+        </GithubRepo>
+        <GithubRepo repo="undug" server:defer>
+          <GithubRepoFallback slot="fallback" />
+        </GithubRepo>
       </article>
     </section>
     <section class="space-y-5">
